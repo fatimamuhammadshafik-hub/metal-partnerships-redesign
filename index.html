@@ -468,6 +468,15 @@ h3{font-size:24px}
 @media (max-width:600px){.hero h1{font-size:38px}}
 
 @media (max-width:600px){.hero-ctas .btn{white-space:nowrap;padding:14px 12px}}
+
+@media (max-width:600px){.plabel{font-size:11px}.big .plabel{font-size:11px}}
+
+@media (max-width:600px){.fbottom>*{min-width:0;max-width:100%}.news{width:100%}.news .f{width:100%}.news input{min-width:0;flex:1;width:auto}}
+
+/* phones: dots only on the outer ring so labels never collide while orbiting */
+@media (max-width:600px){.planet:not(.big) .plabel{display:none}.orbit .core{width:66px;height:66px;margin:-33px 0 0 -33px;font-size:32px}.big .plabel{padding:2px 6px}}
+
+.rot-inner{z-index:3}
 </style>
 </head>
 <body>
@@ -1020,17 +1029,25 @@ document.querySelectorAll(".benefit,.story,.flaw").forEach(el=>el.classList.add(
 
 /* ---------- Sticky bar: full bar after proof strip, pill once the form is reached ---------- */
 const proofEl=document.querySelector(".proof"), applyEl=document.getElementById("apply");
-let pastProof=false, atForm=false;
+let pastProof=false, atForm=false, formOnScreen=false, inDir=false, typing=false;
+const phone=matchMedia('(max-width:600px)');
 function upd(){
-  sticky.classList.toggle("show",pastProof);
-  sticky.classList.toggle("mini",pastProof&&atForm);
+  const mini=atForm||inDir;
+  sticky.classList.toggle("show",pastProof&&!typing&&!(phone.matches&&formOnScreen));
+  sticky.classList.toggle("mini",pastProof&&mini);
   sticky.setAttribute("aria-hidden",!pastProof);
-  sBtn.tabIndex=(pastProof&&!atForm)?0:-1;
-  sticky.setAttribute("role",atForm?"button":"");
-  sticky.tabIndex=(pastProof&&atForm)?0:-1;
+  sBtn.tabIndex=(pastProof&&!mini)?0:-1;
+  sticky.setAttribute("role",mini?"button":"");
+  sticky.tabIndex=(pastProof&&mini)?0:-1;
 }
 new IntersectionObserver(([e])=>{pastProof=!e.isIntersecting&&e.boundingClientRect.top<0;upd()}).observe(proofEl);
 new IntersectionObserver(([e])=>{atForm=e.isIntersecting||e.boundingClientRect.top<0;upd()},{threshold:0}).observe(applyEl);
+/* on phones the pill steps aside while the form itself is on screen, then comes back below it */
+new IntersectionObserver(([e])=>{formOnScreen=e.isIntersecting;upd()},{threshold:0}).observe(document.getElementById('partner-form'));
+new IntersectionObserver(([e])=>{inDir=e.isIntersecting;upd()},{threshold:0}).observe(document.getElementById("directory"));
+/* hide the bar while someone is typing, so it never sits on a field or the keyboard */
+document.addEventListener("focusin",e=>{if(e.target.matches("input,select,textarea")){typing=true;upd()}});
+document.addEventListener("focusout",e=>{if(e.target.matches("input,select,textarea")){typing=false;upd()}});
 function goSticky(){
   const href=sBtn.getAttribute("href");
   if(href==="#directory"){document.getElementById("directory").scrollIntoView({behavior:reduce?"auto":"smooth"});setTimeout(()=>q.focus({preventScroll:true}),reduce?0:500)}
