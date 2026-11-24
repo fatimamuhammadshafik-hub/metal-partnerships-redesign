@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Partners | Metal</title>
+<meta name="description" content="Accelerators, investors, advisors and venture studios partner with Metal so their founders can find the right investors and run their raise in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F8F8F6;
+  --surface:#FFFFFF;
+  --ink:#1F1F1F;          /* headings */
+  --body:#595959;         /* body copy: 6.6:1 on --bg (was ~#AFAFAD, ~2:1) */
+  --muted:#6B6B6B;        /* small meta text: 5:1 */
+  --line:#E4E4E0;
+  --dark:#222222;
+  --dark-2:#2C2C2C;
+  --on-dark:#F4F4F2;
+  --on-dark-body:#B5B5B5; /* hero subtext on dark */
+  --purple:#6236E0;       /* button fill: 6.7:1 with white (was #916BFF, 3.65:1) */
+  --purple-hover:#5229C9;
+  --accent:#916BFF;       /* decorative only, never behind text */
+  --lav:#EEEAFB;
+  --lav-2:#E3DCFA;
+  --serif:"Newsreader", "Tiempos Text", Georgia, serif;
+  --sans:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap:1040px;
+  --r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.6}
+a{color:inherit}
+img{max-width:100%}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:300;color:var(--ink);letter-spacing:-.01em;line-height:1.15}
+h1{font-size:clamp(36px,5vw,52px)}
+h2{font-size:clamp(30px,3.8vw,42px)}
+h3{font-size:22px;font-weight:400}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid currentColor;padding:4px 8px;color:var(--muted)}
+.section{padding:96px 0}
+.section-head{text-align:center;max-width:680px;margin:0 auto 48px}
+.section-head .eyebrow{margin-bottom:20px}
+.section-head p{margin-top:16px;font-size:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:500 15px/1 var(--sans);padding:14px 20px;border-radius:var(--r);border:1px solid transparent;cursor:pointer;text-decoration:none;transition:background .15s}
+.btn-primary{background:var(--purple);color:#fff}
+.btn-primary:hover{background:var(--purple-hover)}
+.btn-light{background:#fff;color:var(--ink);border-color:var(--lav-2)}
+.btn-light:hover{background:var(--lav)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.link{font-weight:500;color:var(--purple);text-decoration:none}
+.link:hover{text-decoration:underline}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Announcement + nav (kept from current site) */
+.announce{background:#111;color:#fff;font-size:13px;text-align:center;padding:10px 16px}
+.announce span{opacity:.9}
+.announce .sep{display:inline-block;width:1px;height:14px;background:#666;margin:0 12px;vertical-align:middle}
+.announce a{text-decoration:none;font-weight:500}
+.nav{background:var(--bg);border-bottom:1px solid var(--line);position:relative;z-index:5}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{width:40px;height:40px;border-radius:6px;background:#1b1b1b;color:#fff;display:grid;place-items:center;font:700 22px/1 var(--sans);text-decoration:none;letter-spacing:-.04em}
+.navpill{display:flex;align-items:center;background:#1b1b1b;border-radius:6px;padding:4px;gap:2px}
+.navpill a{color:#d8d8d8;text-decoration:none;font-size:13px;padding:8px 12px;border-radius:4px}
+.navpill a:hover{color:#fff}
+.navpill .caret::after{content:"";display:inline-block;width:5px;height:5px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);margin:0 0 3px 6px}
+.navpill .login{background:#2a2a2a;color:#fff;margin-left:20px}
+.navpill .demo{background:#fff;color:var(--ink);border:1px solid var(--lav-2)}
+.navpill .menu{display:none}
+
+/* Hero */
+.hero{background:var(--dark);color:var(--on-dark);padding:88px 0 96px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero .eyebrow{color:#9a9a9a;margin-bottom:24px}
+.hero h1{color:var(--on-dark);max-width:560px}
+.hero p.sub{color:var(--on-dark-body);font-size:18px;max-width:520px;margin:20px 0 32px}
+.hero .founder-link{display:block;margin-top:20px;font-size:14px;color:#cfcfcf;text-decoration:none}
+.hero .founder-link span{text-decoration:underline;text-underline-offset:3px;color:#fff}
+.hero .founder-link:hover span{color:var(--lav-2)}
+
+/* Orbit */
+.orbit{position:relative;width:100%;max-width:420px;aspect-ratio:1;margin:48px 0 0 auto}
+.orbit .ring{position:absolute;inset:12%;border:1px dashed #5a5a5a;border-radius:50%}
+.orbit .ring.inner{inset:30%;border-color:#3d3d3d}
+.orbit .core{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;background:#fff;color:#111;border-radius:50%;display:grid;place-items:center;font:700 40px/1 var(--sans);letter-spacing:-.05em;box-shadow:0 0 0 10px rgba(255,255,255,.04)}
+.node{position:absolute;transform:translate(-50%,-50%);border-radius:50%;background:#fff;color:#222;display:grid;place-items:center;text-align:center;font:600 10px/1.1 var(--sans)}
+.node.sm{width:48px;height:48px;background:#333;color:#cfcfcf;border:1px solid #4a4a4a;font-weight:500}
+.node.lg{width:76px;height:76px;font-size:13px;box-shadow:0 0 0 6px rgba(145,107,255,.25)}
+.callout{position:absolute;background:#2f2f2f;border:1px solid #474747;border-radius:var(--r);padding:8px 12px;white-space:nowrap}
+.callout b{display:block;font:300 24px/1.1 var(--serif);color:#fff}
+.callout small{font-size:12px;color:#c4c4c4}
+.orbit .spin{position:absolute;inset:0;animation:spin 90s linear infinite}
+.orbit .spin .node.sm{animation:spin 90s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orbit .spin .node.sm{transform-origin:center}
+.spin .node.sm{translate:-50% -50%;transform:none}
+
+/* Proof strip */
+.proof{border-bottom:1px solid var(--line);background:var(--surface)}
+.proof .wrap{padding-top:40px;padding-bottom:40px}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 32px;padding-bottom:32px;border-bottom:1px solid var(--line)}
+.logos span{font:600 15px/1 var(--sans);color:#8a8a8a;letter-spacing:-.01em;white-space:nowrap}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:32px;text-align:center}
+.stat b{display:block;font:300 48px/1 var(--serif);color:var(--ink);font-variant-numeric:tabular-nums}
+.stat > span{display:block;margin-top:8px;font-size:15px;color:var(--body)}
+
+/* Switch */
+.tabs{display:flex;justify-content:center;gap:4px;background:#ECECE8;padding:4px;border-radius:6px;width:max-content;max-width:100%;margin:0 auto 40px}
+.tab{font:500 15px/1 var(--sans);padding:12px 18px;border:0;border-radius:4px;background:transparent;color:var(--body);cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--dark);color:#fff}
+.panel{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.panel[hidden]{display:none}
+.benefit{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.benefit .num{font:300 14px/1 var(--serif);color:var(--accent);margin-bottom:28px;display:block}
+.benefit h3{margin-bottom:10px}
+.panel-foot{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--lav);border-radius:var(--r);padding:20px 24px;margin-top:4px}
+.panel-foot p{color:#3f3f3f;max-width:620px}
+.panel-foot p em{font-style:normal;font-weight:600;color:var(--ink)}
+.founder-panel{grid-template-columns:1.2fr 1fr;align-items:stretch}
+.deal-card{background:var(--dark);color:var(--on-dark);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:16px}
+.deal-card h3{color:#fff;font-size:26px}
+.deal-card p{color:var(--on-dark-body)}
+.deal-list{list-style:none;display:grid;gap:10px;margin:4px 0 8px}
+.deal-list li{display:flex;gap:10px;align-items:baseline;color:#e6e6e6}
+.deal-list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;transform:translateY(-2px)}
+.deal-card .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:auto}
+
+/* Old way vs Metal */
+.compare{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:0;align-items:stretch}
+.flaw{background:var(--surface);border:1px solid var(--line);padding:32px;display:flex;flex-direction:column}
+.flaw:first-child{border-radius:var(--r) 0 0 var(--r);border-right:0}
+.flaw:last-child{border-radius:0 var(--r) var(--r) 0;border-left:0}
+.flaw .tag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.flaw h3{margin-bottom:16px}
+.flaw .verdict{margin-top:auto;padding-top:20px;border-top:1px solid var(--line);font-size:15px}
+.flaw .verdict b{color:var(--ink);font-weight:600}
+.pro,.con{display:flex;gap:10px;margin-bottom:8px;font-size:15px}
+.pro::before{content:"+";color:var(--ink);font-weight:600}
+.con::before{content:"–";color:var(--ink);font-weight:600}
+.metal-mid{background:var(--dark);color:var(--on-dark);padding:40px 32px;border-radius:var(--r);margin:-16px 0;display:flex;flex-direction:column;position:relative;z-index:1}
+.metal-mid .mark{width:44px;height:44px;border-radius:6px;background:#fff;color:#111;display:grid;place-items:center;font:700 22px/1 var(--sans);letter-spacing:-.04em;margin-bottom:24px}
+.metal-mid h3{color:#fff;font-size:28px;margin-bottom:16px}
+.metal-mid p{color:var(--on-dark-body)}
+.metal-mid .pro{color:#e6e6e6}.metal-mid .pro::before{color:var(--accent)}
+.metal-mid ul{margin-top:20px}
+
+/* Stories */
+.stories{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.story{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;text-decoration:none;transition:border-color .15s,transform .15s}
+.story:hover{border-color:var(--accent);transform:translateY(-2px)}
+.story .who{font:600 14px/1 var(--sans);color:var(--ink);margin-bottom:28px}
+.story b{font:300 40px/1 var(--serif);color:var(--ink);display:block;margin-bottom:12px}
+.story p{font-size:15px;margin-bottom:24px}
+.story .link{margin-top:auto;font-size:14px}
+
+/* How it works */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s;border-top:1px solid var(--ink)}
+.step{padding:28px 24px 0 0}
+.step .n{font:300 15px/1 var(--serif);color:var(--accent);display:block;margin-bottom:24px}
+.step h3{font-size:21px;margin-bottom:10px}
+.step p{font-size:15px}
+
+/* Directory */
+.dir-tools{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:24px}
+.search{position:relative;flex:1 1 320px;max-width:420px}
+.search input{width:100%;font:400 16px/1 var(--sans);padding:14px 16px 14px 42px;border:1px solid #cfcfca;border-radius:var(--r);background:#fff;color:var(--ink)}
+.search input::placeholder{color:#7a7a7a}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#7a7a7a}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:500 14px/1 var(--sans);padding:10px 14px;border-radius:999px;border:1px solid #cfcfca;background:#fff;color:var(--body);cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--dark);border-color:var(--dark);color:#fff}
+.dir-count{font-size:14px;color:var(--muted);margin-bottom:16px}
+.dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;grid-template-columns:44px 1fr;gap:4px 14px;align-items:start}
+.mono{grid-row:span 3;width:44px;height:44px;border-radius:6px;background:var(--lav);color:#3b2a86;display:grid;place-items:center;font:600 14px/1 var(--sans)}
+.pcard .name{font-weight:600;color:var(--ink);line-height:1.3}
+.pcard .type{font-size:13px;color:var(--muted)}
+.pcard .meta{display:flex;flex-wrap:wrap;gap:6px 12px;margin-top:8px;font-size:13px}
+.deal{text-decoration:none;background:var(--lav);color:#3b2a86;border-radius:999px;padding:3px 9px;font-weight:600;font-size:12px}
+.empty{display:none;text-align:center;padding:48px 24px;background:#fff;border:1px dashed #cfcfca;border-radius:var(--r)}
+.empty p{margin-bottom:12px}
+
+/* Form */
+.apply{background:var(--dark);border-radius:var(--r);display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:56px;position:relative;overflow:hidden}
+.apply::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 92% 8%,rgba(255,255,255,.12) 0 2px,transparent 3px),
+  radial-gradient(circle at 70% 30%,rgba(255,255,255,.12) 0 2px,transparent 3px),
+  radial-gradient(circle at 85% 70%,rgba(255,255,255,.12) 0 2px,transparent 3px);pointer-events:none}
+.apply h2{color:#fff}
+.apply .lead{color:var(--on-dark-body);margin-top:16px;font-size:17px;max-width:400px}
+.apply .peers{margin-top:32px;color:#9e9e9e;font-size:14px}
+.apply .peers b{color:#e6e6e6;font-weight:500}
+form{background:#fff;border-radius:var(--r);padding:28px;display:grid;gap:16px;position:relative;z-index:1}
+.field{display:grid;gap:6px}
+.field label,.field legend{font-size:14px;font-weight:500;color:var(--ink)}
+.field input,.field select{font:400 16px/1.2 var(--sans);padding:12px 14px;border:1px solid #cfcfca;border-radius:var(--r);background:#fff;color:var(--ink);width:100%}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+fieldset{border:0}
+.sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}
+.sizes label{position:relative}
+.sizes input{position:absolute;opacity:0;inset:0}
+.sizes span{display:block;text-align:center;padding:11px 6px;border:1px solid #cfcfca;border-radius:var(--r);font-size:14px;color:var(--body);cursor:pointer}
+.sizes input:checked+span{background:var(--dark);border-color:var(--dark);color:#fff}
+.sizes input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+form .btn{width:100%;margin-top:4px}
+.thanks{display:none;text-align:center;padding:24px 8px}
+.thanks h3{margin-bottom:8px}
+
+/* FAQ */
+.faq{max-width:760px;margin:0 auto}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;padding:22px 0;font:400 21px/1.3 var(--serif);color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:300 26px/1 var(--sans);color:var(--muted);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 22px;max-width:640px}
+
+/* Footer (kept from current site) */
+footer{padding:56px 0 40px;font-size:13px}
+.fcols{display:grid;grid-template-columns:2fr 1fr 2fr 1fr;gap:32px}
+.fcols h4{font:500 13px/1 var(--sans);color:var(--ink);padding-bottom:10px;border-bottom:1px solid #cfcfca;margin-bottom:14px}
+.fsub{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:16px}
+.fsub h5{font:500 12px/1 var(--sans);color:var(--ink);margin-bottom:10px}
+.fsub a{display:block;color:var(--muted);text-decoration:none;margin-bottom:6px;font-size:12.5px}
+.fsub a:hover{color:var(--ink)}
+.fbottom{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:40px}
+.news p{color:var(--ink);margin-bottom:12px}
+.news .f{display:flex;gap:8px}
+.news input{font:400 14px var(--sans);padding:10px 12px;border:1px solid #cfcfca;border-radius:var(--r);background:#fff;min-width:260px}
+.badges{display:flex;gap:12px;align-items:center}
+.badge{width:52px;height:52px;border-radius:50%;border:2px solid #333;display:grid;place-items:center;font:700 9px/1.1 var(--sans);text-align:center;color:#333}
+.copy{margin-top:16px;color:var(--muted);font-size:12px;text-align:right}
+
+/* Sticky action bar */
+.sticky{position:fixed;left:50%;bottom:20px;transform:translate(-50%,140%);z-index:50;display:flex;align-items:center;gap:20px;background:var(--dark);color:#fff;padding:10px 10px 10px 20px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.18);transition:transform .3s ease;max-width:calc(100% - 32px)}
+.sticky.show{transform:translate(-50%,0)}
+.sticky .label{font-size:15px;white-space:nowrap}
+.sticky .btn{padding:11px 16px;white-space:nowrap}
+
+/* Count-up */
+.count{display:inline-block;min-width:1ch}
+
+/* ---------- Responsive ---------- */
+@media (max-width:960px){
+  .stories{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);row-gap:32px}
+}
+@media (max-width:860px){
+  .section{padding:72px 0}
+  .navpill a:not(.demo):not(.menu){display:none}
+  .navpill .menu{display:block;color:#fff}
+  .hero{padding:56px 0 64px}
+  .hero .wrap{grid-template-columns:1fr}
+  .orbit{margin:8px auto 0;max-width:360px}
+  .panel{grid-template-columns:1fr}
+  .founder-panel{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+  .flaw:first-child{border-radius:var(--r) var(--r) 0 0;border-right:1px solid var(--line);border-bottom:0}
+  .flaw:last-child{border-radius:0 0 var(--r) var(--r);border-left:1px solid var(--line);border-top:0}
+  .metal-mid{margin:0}
+  .apply{grid-template-columns:1fr;padding:32px 20px;gap:28px}
+  .fcols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  body{font-size:15px}
+  .wrap{padding:0 20px}
+  .announce .date,.announce .sep.first{display:none}
+  .hero p.sub{font-size:16px}
+  .hero .btn-primary{width:100%}
+  .callout b{font-size:20px}
+  .orbit{width:86%;margin-top:64px}
+  .c-left{left:-6%!important;top:-12%!important}.c-right{right:-6%!important;top:-12%!important}
+  .stats{grid-template-columns:1fr;gap:20px}
+  .stat b{font-size:40px}
+  .logos{gap:10px 20px}
+  .logos span{font-size:13px}
+  .tabs{width:100%;overflow-x:auto;justify-content:flex-start}
+  .tab{padding:11px 14px;font-size:14px;flex:1}
+  .stories{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .step{padding-right:0}
+  .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;margin:0 -20px;padding-left:20px;padding-right:20px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .search{max-width:none}
+  .dir-grid{grid-template-columns:1fr;gap:8px}
+  .pcard{padding:14px}
+  .row2{grid-template-columns:1fr}
+  .sizes{grid-template-columns:repeat(2,1fr)}
+  .fcols{grid-template-columns:1fr}
+  .copy{text-align:left}
+  .news input{min-width:0;flex:1}
+  .sticky{left:12px;right:12px;bottom:12px;transform:translateY(140%);justify-content:space-between;max-width:none}
+  .sticky.show{transform:translateY(0)}
+  .sticky .label{font-size:14px;white-space:normal}
+}
+
+/* ================= Motion layer ================= */
+:root{--ease:cubic-bezier(.2,.7,.2,1)}
+.hero{position:relative}
+.hero>.wrap{position:relative;z-index:1}
+.glow{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s ease;z-index:0;
+  background:radial-gradient(420px circle at var(--gx,70%) var(--gy,40%),rgba(145,107,255,.2),transparent 65%)}
+.glow-on>.glow{opacity:1}
+.apply>*:not(.glow){position:relative;z-index:1}
+
+/* Solar system */
+.orbit-stage{perspective:1000px;width:100%;max-width:460px;margin-left:auto}
+.orbit{position:relative;width:100%;max-width:none;aspect-ratio:1;margin:0;transform-style:preserve-3d;transition:transform .7s var(--ease);will-change:transform}
+.orbit .ring{position:absolute;border-radius:50%;border:1px dashed #565656}
+.orbit .r-outer{inset:5%}
+.orbit .r-inner{inset:27%;border-color:#454545}
+.rot{position:absolute;inset:0;animation:spin var(--d) linear infinite}
+.rot-outer{--d:150s}
+.rot-inner{--d:110s;animation-direction:reverse}
+.planet{position:absolute;transform:translate(-50%,-50%)}
+.pbody{display:flex;flex-direction:column;align-items:center;gap:6px;animation:spin var(--d) linear infinite reverse}
+.rot-inner .pbody{animation-direction:normal}
+.orbit:hover .rot,.orbit:hover .pbody{animation-play-state:paused}
+.pdot{width:46px;height:46px;border-radius:50%;background:#323232;border:1px solid #4d4d4d;color:#dcdcdc;display:grid;place-items:center;font:600 11px/1 var(--sans);transition:transform .25s var(--ease),background .25s}
+.planet:hover .pdot{transform:scale(1.1);background:#3d3d3d}
+.plabel{font-size:11px;line-height:1.3;color:#bdbdbd;white-space:nowrap;text-align:center}
+.big .pdot{width:74px;height:74px;background:#fff;color:#1f1f1f;font-size:13px;border:0;box-shadow:0 0 0 6px rgba(145,107,255,.22),0 0 36px rgba(145,107,255,.35)}
+.big .plabel{background:rgba(28,28,28,.92);border:1px solid #474747;border-radius:4px;padding:5px 9px;color:#cfcfcf}
+.big .plabel b{display:block;font:300 22px/1.1 var(--serif);color:#fff}
+.orbit .core{z-index:2;box-shadow:0 0 0 10px rgba(255,255,255,.04),0 0 60px rgba(145,107,255,.28)}
+
+/* Ticker */
+.ticker{overflow:hidden;border-bottom:1px solid var(--line);padding:22px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.ticker-track{display:flex;width:max-content;animation:tick 70s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track span{font:600 15px/1 var(--sans);color:#7a7a7a;padding-right:56px;white-space:nowrap;display:inline-flex;align-items:center;gap:14px}
+.ticker-track span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent);opacity:.7}
+.ticker-track .dup{display:contents}
+.ticker-track .dup::before{display:none}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* Headline words */
+.motion .hero h1 .w{display:inline-block;opacity:0;transform:translateY(.35em);animation:wordIn .55s var(--ease) forwards;animation-delay:calc(var(--i) * 65ms + 80ms)}
+.motion .hero .sub,.motion .hero .btn-primary,.motion .hero .founder-link,.motion .orbit-stage{opacity:0;animation:fadeUp .6s var(--ease) .4s forwards}
+@keyframes wordIn{to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* Scroll reveals */
+.reveal,.lift{transition:opacity .6s var(--ease) var(--dl,0s),transform .6s var(--ease) var(--dl,0s),translate .25s var(--ease),box-shadow .25s ease,border-color .25s ease}
+.motion .reveal{opacity:0;transform:translateY(18px)}
+.motion .reveal.from-left{transform:translateX(-32px)}
+.motion .reveal.from-right{transform:translateX(32px)}
+.motion .reveal.zoom{transform:scale(.93)}
+.motion .reveal.in{opacity:1;transform:none}
+.story:hover{transform:none}
+.lift:hover{translate:0 -4px;box-shadow:0 12px 28px rgba(31,31,31,.08)}
+.motion .pcard{animation:cardIn .35s var(--ease) both;animation-delay:calc(var(--i,0) * 25ms)}
+@keyframes cardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Underline sweep */
+.sweep{background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 94%/100% 2px;padding-bottom:2px}
+.motion .sweep{background-size:0% 2px;transition:background-size .7s var(--ease) .25s}
+.motion .in .sweep{background-size:100% 2px}
+
+/* Directory intro */
+.dir-intro{background:var(--lav);border:1px dashed #cbbff3;border-radius:var(--r);padding:48px 24px;text-align:center}
+.dir-intro b{display:block;font:300 clamp(48px,7vw,72px)/1 var(--serif);color:var(--ink);font-variant-numeric:tabular-nums}
+.dir-intro .t{display:block;font:300 24px/1.2 var(--serif);color:var(--ink);margin-top:8px}
+.dir-intro p{margin-top:10px;color:#4a4a4a}
+.dir-intro[hidden],.dir-grid[hidden],.dir-count[hidden]{display:none}
+
+/* Sticky: full bar -> pill */
+.sticky{gap:14px;padding:10px 10px 10px 18px;transition:transform .35s var(--ease),padding .35s var(--ease),border-radius .35s var(--ease)}
+.sticky .full-part{display:flex;align-items:center;gap:20px;max-width:520px;opacity:1;overflow:hidden;transition:max-width .4s var(--ease),opacity .25s ease}
+.sticky .mini-text{max-width:0;opacity:0;overflow:hidden;white-space:nowrap;font-size:14px;font-weight:500;transition:max-width .4s var(--ease),opacity .25s ease}
+.sdot{position:relative;width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+.sdot::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--accent);animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.7}to{transform:scale(2.8);opacity:0}}
+.sticky.mini{padding:12px 18px;border-radius:999px;cursor:pointer;gap:10px}
+.sticky.mini .full-part{max-width:0;opacity:0}
+.sticky.mini .mini-text{max-width:220px;opacity:1}
+.sticky.mini:hover{background:#2e2e2e}
+
+@media (max-width:860px){
+  .orbit-stage{margin:24px auto 0;max-width:400px}
+}
+@media (max-width:600px){
+  .orbit-stage{max-width:340px}
+  .big .pdot{width:60px;height:60px;font-size:12px}
+  .big .plabel b{font-size:18px}
+  .pdot{width:38px;height:38px;font-size:10px}
+  .plabel{font-size:10px}
+  .ticker-track span{font-size:13px;padding-right:40px}
+  .sticky .full-part{flex:1;justify-content:space-between}
+  .sticky.mini{left:auto}
+}
+@media (prefers-reduced-motion:reduce){
+  .ticker{-webkit-mask-image:none;mask-image:none}
+  .ticker-track{width:auto;flex-wrap:wrap;justify-content:center;gap:12px 0;padding:0 20px}
+  .ticker-track .dup{display:none}
+}
+
+/* Logos */
+.logo-img{position:relative;display:grid;place-items:center;width:100%;height:100%;border-radius:inherit;overflow:hidden}
+.logo-img img{position:absolute;inset:18%;width:64%;height:64%;object-fit:contain;background:transparent}
+.mono{background:#fff;border:1px solid var(--line);overflow:hidden}
+.mono .logo-img{color:#3b2a86}
+.mono:has(img){color:transparent}
+.logo-img:has(img){color:transparent}
+.pdot{background:#fff!important;color:#3b2a86!important;border:0!important;overflow:hidden}
+.pdot .logo-img img{inset:20%;width:60%;height:60%}
+.ticker-track .logo-img.tk{width:22px;height:22px;border-radius:5px;background:#fff;border:1px solid var(--line);font-size:9px;color:#3b2a86}
+.ticker-track .logo-img.tk img{inset:3px;width:calc(100% - 6px);height:calc(100% - 6px)}
+.ticker-track .logo-img.tk::before{display:none}
+.ticker-track span.logo-img::before,.ticker-track > span::before,.ticker-track .dup > span::before{display:none}
+.ticker-track > span,.ticker-track .dup > span{color:#5f5f5f}
+
+.ticker-track .logo-img.tk{padding:0;flex:none;display:grid}
+.big .pdot{width:62px;height:62px}
+.big .plabel{padding:3px 8px}
+.big .plabel b{font-size:19px}
+.orbit-stage{max-width:480px}
+@media (max-width:600px){.big .pdot{width:52px;height:52px}.big .plabel b{font-size:16px}.big .plabel{font-size:10px}}
+
+.sticky.show.mini{left:auto;right:24px;transform:none}
+@media (max-width:600px){.sticky.show.mini{right:12px}}
+
+/* Hero CTAs */
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn-outline-dark{background:transparent;color:#fff;border-color:#5a5a5a}
+.btn-outline-dark:hover{border-color:#9a9a9a;background:rgba(255,255,255,.04)}
+.motion .hero .hero-ctas{opacity:0;animation:fadeUp .6s var(--ease) .4s forwards}
+.motion .hero .btn-primary{opacity:1;animation:none}
+@media (max-width:600px){.hero-ctas .btn{flex:1 1 140px;width:auto}}
+
+/* Charcoal ticker */
+.ticker{background:var(--dark);border-top:1px solid #333;border-bottom:0;position:relative;-webkit-mask-image:none;mask-image:none}
+.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:12%;z-index:1;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(90deg,var(--dark),transparent)}
+.ticker::after{right:0;background:linear-gradient(270deg,var(--dark),transparent)}
+.ticker-track > span,.ticker-track .dup > span{color:#d6d6d6}
+.ticker-track .logo-img.tk{border:0;width:24px;height:24px}
+
+/* Stats rising in */
+.motion .stat.rise{opacity:0;transform:translateY(32px);transition:opacity .6s var(--ease) var(--dl,0s),transform .6s var(--ease) var(--dl,0s)}
+.motion .stat.rise.up{opacity:1;transform:none}
+
+/* Headings: a step bigger and darker, still light serif */
+h1,h2{color:#121212;font-weight:300}
+h1{font-size:clamp(42px,5.8vw,62px);letter-spacing:-.015em}
+h2{font-size:clamp(34px,4.6vw,50px);letter-spacing:-.015em}
+h3{font-size:24px}
+.hero h1,.apply h2{color:#fff}
+.flaw h3,.step h3{font-size:23px}
+
+/* Key-word sweep (one per heading) */
+.sweep{background:linear-gradient(var(--accent),var(--accent)) no-repeat 0 96%/100% 3px;padding-bottom:3px}
+.motion .sweep{background-size:0% 3px;transition:background-size .7s var(--ease) .3s}
+.motion .in .sweep{background-size:100% 3px}
+.motion .hero h1 .hero-sweep{background-size:0% 3px;animation-name:wordIn,sweepIn;animation-duration:.55s,.7s;
+  animation-delay:calc(var(--i) * 65ms + 80ms),.85s;animation-timing-function:var(--ease),var(--ease);animation-fill-mode:forwards,forwards}
+@keyframes sweepIn{to{background-size:100% 3px}}
+@media (max-width:600px){h1{font-size:40px}h2{font-size:32px}}
+
+.hero h1{max-width:none;font-size:clamp(40px,4.7vw,56px)}
+@media (min-width:861px){.hero h1{white-space:nowrap}}
+@media (max-width:600px){.hero h1{font-size:38px}}
+
+@media (max-width:600px){.hero-ctas .btn{white-space:nowrap;padding:14px 12px}}
+</style>
+</head>
+<body>
+
+<!-- Announcement bar: unchanged -->
+<div class="announce">
+  <span class="date">Nov 24, 2026</span><span class="sep first"></span><span>Seedcamp's thesis for pre-seed to Series B</span><span class="sep"></span><a href="https://luma.com/yekz8c86">Save your spot →</a>
+</div>
+
+<!-- Nav: unchanged -->
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="https://www.metal.so/" aria-label="Metal home">m</a>
+    <nav class="navpill" aria-label="Main">
+      <a class="caret" href="#">Product</a>
+      <a class="caret" href="#">Autopilot</a>
+      <a class="caret" href="#">Resources</a>
+      <a href="https://www.metal.so/pricing">Pricing</a>
+      <a class="login" href="https://app.metal.so/">Login</a>
+      <a class="menu" href="#">Menu</a>
+      <a class="demo" href="https://www.metal.so/book-a-demo">Book a Demo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- 1. HERO -->
+<section class="hero" id="top">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Partnerships</span>
+      <h1>Give Your Founders<br>A <span class="sweep">Better</span> Way To Raise</h1>
+      <p class="sub">Accelerators, investors, advisors and venture studios partner with Metal so their founders can find the right investors and run their raise in one place.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#apply">Become A Partner</a>
+        <a class="btn btn-outline-dark" href="#stories">Read Stories</a>
+      </div>
+      <a class="founder-link" href="#directory" data-focus-search>Raising yourself? <span>Check if your program partners with Metal →</span></a>
+    </div>
+
+    <div class="orbit-stage" aria-hidden="true">
+      <div class="orbit" id="orbit">
+        <div class="ring r-outer"></div>
+        <div class="ring r-inner"></div>
+        <div class="rot rot-outer" id="rot-outer"></div>
+        <div class="rot rot-inner" id="rot-inner"></div>
+        <div class="core">m</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PROOF STRIP -->
+<section class="proof" aria-label="Partners and results">
+  <div class="ticker" aria-label="Partner list"><div class="ticker-track" id="ticker"></div></div>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b><span class="count" id="partner-count" data-to="17">17</span></b><span>Partners across accelerators, funds and advisors</span></div>
+      <div class="stat"><b><span class="count" data-to="100" data-suffix="+">100+</span></b><span>YC founders on Metal</span></div>
+      <div class="stat"><b><span class="count" data-to="10000" data-suffix="+">10,000+</span></b><span>Techstars founders with Metal as default</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. SWITCH -->
+<section class="section" id="for-you">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Who It's For</span>
+      <h2>What Partnering Looks Like For You</h2>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Choose who you are">
+      <button class="tab" role="tab" id="t-acc" aria-controls="p-acc" aria-selected="true">Accelerator Or Fund</button>
+      <button class="tab" role="tab" id="t-adv" aria-controls="p-adv" aria-selected="false" tabindex="-1">Advisor</button>
+      <button class="tab" role="tab" id="t-fdr" aria-controls="p-fdr" aria-selected="false" tabindex="-1">Founder</button>
+    </div>
+
+    <div class="panel" id="p-acc" role="tabpanel" aria-labelledby="t-acc">
+      <div class="benefit"><span class="num">01</span><h3>Your Network, Put To Work</h3><p>Metal shows founders which of your mentors, alumni and portfolio peers can make the intro.</p></div>
+      <div class="benefit"><span class="num">02</span><h3>Visibility That Outlasts Demo Day</h3><p>Every raise lives in one pipeline, so your cohort doesn't go quiet the week after Demo Day.</p></div>
+      <div class="benefit"><span class="num">03</span><h3>One Playbook For Every Cohort</h3><p>Give first-time founders a repeatable way to learn how rounds work, the way Techstars did when it retired its own platform.</p></div>
+      <div class="panel-foot">
+        <p><em>ERA lists Metal among its official cohort benefits,</em> alongside HubSpot, Carta and Linear.</p>
+        <a class="btn btn-primary" href="#apply" data-type="Accelerator">Become A Partner</a>
+      </div>
+    </div>
+
+    <div class="panel" id="p-adv" role="tabpanel" aria-labelledby="t-adv" hidden>
+      <div class="benefit"><span class="num">01</span><h3>Work Inside Your Client's Raise</h3><p>Work with founders in real time, in one shared workspace, instead of chasing spreadsheets between calls.</p></div>
+      <div class="benefit"><span class="num">02</span><h3>Advise On Judgement, Not Research</h3><p>Founders used to spend 100+ hours on manual investor research. Metal does that part, so your hours go to strategy.</p></div>
+      <div class="benefit"><span class="num">03</span><h3>Bring Data To Every Session</h3><p>Investor profiles with stage, sector, lead behaviour and follow-on patterns, plus Richard AI for valuations and call feedback.</p></div>
+      <div class="panel-foot">
+        <p><em>Capital Department,</em> which has helped startups raise $250m+, supports its founders with Metal.</p>
+        <a class="btn btn-primary" href="#apply" data-type="Advisor">Become A Partner</a>
+      </div>
+    </div>
+
+    <div class="panel founder-panel" id="p-fdr" role="tabpanel" aria-labelledby="t-fdr" hidden>
+      <div class="benefit">
+        <span class="num">For Founders</span>
+        <h3>Already In A Partner Program?</h3>
+        <p style="margin-bottom:16px">Your accelerator or investor may already have a deal with Metal. Most partner programs come with an extended trial, a discount on every plan and dedicated onboarding.</p>
+        <p>Search the directory for your program to see what you get.</p>
+      </div>
+      <div class="deal-card">
+        <span class="eyebrow" style="color:#9a9a9a;align-self:flex-start">Example: Metal For Techstars</span>
+        <h3>Techstars Founders Get</h3>
+        <ul class="deal-list">
+          <li>A free founder-led demo</li>
+          <li>An extended trial</li>
+          <li>50% off all plans</li>
+          <li>Dedicated onboarding and support</li>
+        </ul>
+        <div class="btns">
+          <a class="btn btn-primary" href="#directory" data-focus-search>Find Your Program</a>
+          <a class="btn btn-light" href="https://www.metal.so/book-a-demo">Book A Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. OLD WAY VS METAL -->
+<section class="section" style="padding-top:0" id="compare">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Usual Way</span>
+      <h2>Two Ways Partners Help Founders Raise. Both <span class="sweep">Fall Short.</span></h2>
+    </div>
+    <div class="compare">
+      <div class="flaw">
+        <span class="tag">Option one</span>
+        <h3>Spreadsheets &amp; Demo Day Lists</h3>
+        <div class="pro">Reaches the whole cohort at once</div>
+        <div class="con">Same list for every founder, whatever they build</div>
+        <p class="verdict"><b>Falls short:</b> visibility ends at Demo Day.</p>
+      </div>
+      <div class="metal-mid">
+        <div class="mark" aria-hidden="true">m</div>
+        <h3>Metal</h3>
+        <p>The reach of a list with the depth of an advisor.</p>
+        <ul style="list-style:none">
+          <li class="pro">Every founder gets investor intelligence matched to their round</li>
+          <li class="pro">Warm-intro paths through your own network</li>
+          <li class="pro">You work alongside them long after Demo Day</li>
+        </ul>
+      </div>
+      <div class="flaw">
+        <span class="tag">Option two</span>
+        <h3>Office Hours &amp; Advisor Time</h3>
+        <div class="pro">Great, specific advice</div>
+        <div class="con">One founder, one hour at a time</div>
+        <p class="verdict"><b>Falls short:</b> it doesn't scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PARTNER STORIES -->
+<section class="section" id="stories" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Partner Stories</span>
+      <h2>How Our Partners Use Metal</h2>
+    </div>
+    <div class="stories">
+      <a class="story" href="https://www.metal.so/resources/partnership-with-yc">
+        <span class="who">Y Combinator</span>
+        <b><span class="count" data-to="100" data-suffix="+">100+</span></b>
+        <p>YC founders now pay for Metal to run their raise.</p>
+        <span class="link">Read The Story →</span>
+      </a>
+      <a class="story" href="https://www.metal.so/resources/partnership-with-techstars">
+        <span class="who">Techstars</span>
+        <b><span class="count" data-to="10000" data-suffix="+">10,000+</span></b>
+        <p>Founders in a portfolio that retired its own platform and made Metal the default.</p>
+        <span class="link">Read The Story →</span>
+      </a>
+      <a class="story" href="https://www.metal.so/resources/partnership-with-a16z">
+        <span class="who">a16z speedrun</span>
+        <b><span class="count" data-to="50" data-suffix="+">50+</span></b>
+        <p>Founders have run their raise on Metal at the pace of a 12-week sprint.</p>
+        <span class="link">Read The Story →</span>
+      </a>
+      <a class="story" href="https://www.metal.so/resources/partnership-with-goodwater-capital">
+        <span class="who">Goodwater Capital</span>
+        <b>Day 1</b>
+        <p>Goodwater recommends Metal the moment a portfolio company's round closes.</p>
+        <span class="link">Read The Story →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How It Works</span>
+      <h2>Partnering In <span class="sweep">Four</span> Steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3>Tell Us About Your Program</h3><p>Your partner type and how many founders you support. That's the whole form.</p></div>
+      <div class="step"><span class="n">02</span><h3>Meet The Partnerships Team</h3><p>A short call to fit Metal around how your program already runs.</p></div>
+      <div class="step"><span class="n">03</span><h3>Onboard Your Founders</h3><p>Bring your cohort, portfolio or clients onto Metal with a deal of their own.</p></div>
+      <div class="step"><span class="n">04</span><h3>Support Raises With Data</h3><p>Work alongside founders in one shared workspace, round after round.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. DIRECTORY -->
+<section class="section" id="directory" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Directory</span>
+      <h2>The Ecosystem Behind Metal Founders</h2>
+      <p>Every accelerator, fund and advisor that works with Metal. Founders: find your program to see your deal.</p>
+    </div>
+    <div class="dir-tools">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <label for="q" class="sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search partners</label>
+        <input id="q" type="search" placeholder="Search partners…" autocomplete="off">
+      </div>
+      <div class="chips" role="group" aria-label="Filter by type" id="chips"></div>
+    </div>
+    <div class="dir-intro" id="dir-intro">
+      <b><span class="count" id="dir-n" data-to="17">17</span></b>
+      <span class="t">Partners And Counting</span>
+      <p>Pick a type or search to see who's on Metal.</p>
+    </div>
+    <p class="dir-count" id="dir-count" aria-live="polite" hidden></p>
+    <div class="dir-grid" id="dir-grid" hidden></div>
+    <div class="empty" id="empty">
+      <p>No partner matches "<span id="empty-q"></span>" yet.</p>
+      <a class="link" href="#apply">Running a program? Start the conversation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. FORM -->
+<section class="section" id="apply" style="padding-top:0">
+  <div class="wrap">
+    <div class="apply">
+      <div class="glow" aria-hidden="true"></div>
+      <div>
+        <span class="eyebrow" style="color:#9a9a9a;margin-bottom:20px">Become A Partner</span>
+        <h2>Bring Metal To Your Founders</h2>
+        <p class="lead">Tell us who you are. The partnerships team takes it from there.</p>
+        <p class="peers">Join <b>Y Combinator, Techstars, a16z speedrun, ERA</b> and <b id="others-n">13</b> others.</p>
+      </div>
+      <form id="partner-form" novalidate>
+        <div class="row2">
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Work Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="field"><label for="f-org">Organisation</label><input id="f-org" name="org" autocomplete="organization" required></div>
+        <div class="field">
+          <label for="f-type">Partner Type</label>
+          <select id="f-type" name="type" required>
+            <option value="">Select one</option>
+            <option>Accelerator</option>
+            <option>Fund</option>
+            <option>Advisor</option>
+            <option>Coach</option>
+            <option>Connector</option>
+            <option>Founder Community</option>
+            <option>Venture Studio</option>
+          </select>
+        </div>
+        <fieldset class="field">
+          <legend>Founders You Support</legend>
+          <div class="sizes">
+            <label><input type="radio" name="size" value="1-10" required><span>1–10</span></label>
+            <label><input type="radio" name="size" value="11-50"><span>11–50</span></label>
+            <label><input type="radio" name="size" value="51-200"><span>51–200</span></label>
+            <label><input type="radio" name="size" value="200+"><span>200+</span></label>
+          </div>
+        </fieldset>
+        <button class="btn btn-primary" type="submit">Start The Conversation</button>
+      </form>
+      <div class="thanks" id="thanks" style="background:#fff;border-radius:var(--r);position:relative;z-index:1">
+        <h3>Thanks, We'll Be In Touch</h3>
+        <p>The partnerships team will reach out to set up an intro call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FAQ -->
+<section class="section" style="padding-top:0" id="faq">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:32px"><h2>Questions <span class="sweep">Partners</span> Ask</h2></div>
+    <div class="faq">
+      <details><summary>Who can partner with Metal?</summary><p>Accelerators, funds, advisors, coaches, connectors, founder communities and venture studios.</p></details>
+      <details><summary>What do my founders get?</summary><p>Investor intelligence, warm-intro mapping through your network, a pipeline that runs across rounds, and Richard AI as a round analyst. Partner programs also unlock a founder deal. Techstars founders, for example, get a free founder-led demo, an extended trial and 50% off all plans.</p></details>
+      <details><summary>Do I have to change how my program runs?</summary><p>No. speedrun founders use Metal inside a 12-week sprint, and Goodwater brings it in after a round closes. Metal fits around your timing.</p></details>
+      <details><summary>What happens after I reach out?</summary><p>The partnerships team sets up an intro call, then helps you onboard your founders.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- Footer: kept from current site -->
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div><h4>Product</h4><div class="fsub">
+        <div><h5>Fundraising</h5><a href="#">Investor Patterns</a><a href="#">Investor Memory Layer</a><a href="#">Agent Mode</a><a href="#">Pipeline Formation</a><a href="#">Building Access</a><a href="#">Comms Automation</a><a href="#">Call Intelligence</a><a href="#">Mock Calls</a><a href="#">AI-Native Data Room</a></div>
+        <div><h5>Investor Relations</h5><a href="#">AI Update Builder</a><a href="#">Recommendations Engine</a><a href="#">Advanced Analytics</a><a href="#">Follow-On Intelligence</a><a href="#">Emerging Co-Investor Network</a></div>
+      </div></div>
+      <div><h4>Autopilot</h4><div class="fsub"><div><h5>Product</h5><a href="#">Autopilot</a><a href="#">Pitch Decks</a><a href="#">Round Strategy</a><a href="#">Investor Calls</a><a href="#">Leading Indicators</a></div></div></div>
+      <div><h4>Resources</h4><div class="fsub">
+        <div><h5>Education</h5><a href="#">Data Desk</a><a href="#">Live Sessions</a><a href="#">Blogs</a><a href="#">Product Docs</a></div>
+        <div><h5>Ecosystem</h5><a href="#">Use Cases</a><a href="#">Partnerships</a></div>
+        <div><h5>Company</h5><a href="#">About Us</a><a href="#">Careers</a><a href="#">News</a></div>
+      </div></div>
+      <div><h4>Legal</h4><div class="fsub"><div><h5>Legal</h5><a href="#">Terms Of Service</a><a href="#">Privacy Policy</a><a href="#">Security</a><a href="#">Google API Disclosures</a><a href="#">Refund Policy</a></div></div></div>
+    </div>
+    <div class="fbottom">
+      <div class="news">
+        <p>Stay updated with Metal's bi-monthly newsletter on all things fundraising.</p>
+        <div class="f"><input type="email" placeholder="johndoe@email.com" aria-label="Email"><button class="btn btn-primary" style="padding:10px 16px">Subscribe</button></div>
+      </div>
+      <div>
+        <div class="badges"><div class="badge">CASA</div><div class="badge">SOC 2</div></div>
+      </div>
+    </div>
+    <p class="copy">© 2026 Apollo13 Technologies Inc. (Metal)</p>
+  </div>
+</footer>
+
+<!-- Sticky action bar -->
+<div class="sticky" id="sticky" aria-hidden="true">
+  <span class="sdot" aria-hidden="true"></span>
+  <span class="mini-text">Partner With Metal</span>
+  <div class="full-part">
+    <span class="label" id="sticky-label">Bring Metal To Your Founders</span>
+    <a class="btn btn-primary" id="sticky-btn" href="#apply" tabindex="-1">Become A Partner</a>
+  </div>
+</div>
+
+<script>
+/* ---------- Partner data: add the remaining partners here; counts update everywhere ---------- */
+const TYPES = ["Accelerators & Funds","Advisors & Coaches","Connectors & Communities","Venture Studios"];
+const PARTNERS = [
+  {name:"Y Combinator", site:"https://www.ycombinator.com", short:"YC", type:"Accelerators & Funds", deal:"50% off", dealUrl:"https://www.metal.so/partnerships/yc", story:"https://www.metal.so/resources/partnership-with-yc"},
+  {name:"Techstars", site:"https://www.techstars.com", short:"T", type:"Accelerators & Funds", deal:"50% off", dealUrl:"https://www.metal.so/metal-for-techstars", story:"https://www.metal.so/resources/partnership-with-techstars"},
+  {name:"ERA", site:"https://www.eranyc.com", short:"ERA", type:"Accelerators & Funds", story:"https://www.metal.so/resources/partnership-with-era"},
+  {name:"Alchemist Accelerator", site:"https://www.alchemistaccelerator.com", short:"A", type:"Accelerators & Funds", story:"https://www.metal.so/resources/partnership-with-alchemist"},
+  {name:"a16z speedrun", site:"https://speedrun.a16z.com", short:"a16z", type:"Accelerators & Funds", story:"https://www.metal.so/resources/partnership-with-a16z"},
+  {name:"Goodwater Capital", site:"https://www.goodwatercap.com", short:"G", type:"Accelerators & Funds", deal:"20% off", dealUrl:"https://www.metal.so/partnerships/goodwater", story:"https://www.metal.so/resources/partnership-with-goodwater-capital"},
+  {name:"MIT delta v", site:"https://entrepreneurship.mit.edu/accelerator/", short:"Δv", type:"Accelerators & Funds", deal:"30% off", dealUrl:"https://www.metal.so/partnerships/mit-delta-v"},
+  {name:"Alliance", site:"https://alliance.xyz", short:"Al", type:"Accelerators & Funds", deal:"50% off", dealUrl:"https://www.metal.so/partnerships/alliance"},
+  {name:"Initio Capital", short:"I", type:"Accelerators & Funds", deal:"Founder deal", dealUrl:"https://www.metal.so/partnerships/initio"},
+  {name:"Capital Department", site:"https://www.capitaldept.com", short:"CD", type:"Advisors & Coaches"},
+  {name:"Lifted VC", short:"L", type:"Advisors & Coaches"},
+  {name:"Founder Fundraising", short:"FF", type:"Advisors & Coaches"},
+  {name:"Boardy", site:"https://www.boardy.ai", short:"B", type:"Connectors & Communities"},
+  {name:"Hubble", short:"H", type:"Connectors & Communities"},
+  {name:"Founders Live", site:"https://www.founderslive.com", short:"FL", type:"Connectors & Communities", deal:"Founder deal", dealUrl:"https://www.metal.so/partnerships/founders-live"},
+  {name:"Futuresight Ventures", short:"FV", type:"Venture Studios"},
+  {name:"Founders Factory", site:"https://foundersfactory.com", short:"FF", type:"Venture Studios"}
+];
+
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+if (!reduce) document.documentElement.classList.add("motion");
+const N = PARTNERS.length;
+const host = u => { try { return new URL(u).hostname } catch(e){ return "" } };
+/* Real logos load in the viewer's browser from each partner's site icon; monogram shows if there's no site or it fails */
+const logo = (p, cls="") => `<span class="logo-img ${cls}">${esc(p.short)}${p.site?`<img src="https://www.google.com/s2/favicons?domain=${host(p.site)}&sz=128" alt="" loading="lazy" onerror="this.remove()">`:""}</span>`;
+const byName = n => PARTNERS.find(p=>p.name===n);
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---------- Counts from data ---------- */
+/* TOTAL = partners Metal has; add the last two to PARTNERS above and this can become PARTNERS.length */
+const TOTAL = PARTNERS.length;  // 17
+["partner-count","dir-n"].forEach(id=>{const el=document.getElementById(id);el.dataset.to=TOTAL;el.textContent=TOTAL});
+document.getElementById("others-n").textContent = TOTAL - 4;
+
+/* ---------- Ticker (names now, swap for logo files later) ---------- */
+const tickSet = PARTNERS.filter(p=>!/Catalyst/.test(p.name)).map(p=>`<span>${logo(p,"tk")}${esc(p.name)}</span>`).join("");
+document.getElementById("ticker").innerHTML = tickSet + `<span class="dup" aria-hidden="true">${tickSet}</span>`;
+
+/* ---------- Solar system ---------- */
+const INNER = [
+  {name:"Y Combinator", to:100, cap:"YC founders on Metal", deg:-150},
+  {name:"Techstars", to:10000, cap:"Techstars founders", deg:30}
+];
+const OUTER = [["a16z speedrun","speedrun"],["ERA","ERA"],["Alchemist Accelerator","Alchemist"],["Goodwater Capital","Goodwater"],["Alliance","Alliance"],["MIT delta v","MIT delta v"],["Capital Department","Capital Dept."]];
+function place(el, r, deg){const a=deg*Math.PI/180;el.style.left=(50+r*Math.cos(a))+"%";el.style.top=(50+r*Math.sin(a))+"%"}
+const rotIn=document.getElementById("rot-inner"), rotOut=document.getElementById("rot-outer");
+INNER.forEach(p=>{
+  const el=document.createElement("div");el.className="planet big";place(el,23,p.deg);
+  el.innerHTML=`<div class="pbody"><div class="pdot">${logo(byName(p.name))}</div><div class="plabel"><b><span class="count" data-to="${p.to}" data-suffix="+">${p.to.toLocaleString("en-US")}+</span></b>${p.cap}</div></div>`;
+  rotIn.appendChild(el);
+});
+OUTER.forEach(([nm,label],i)=>{
+  const el=document.createElement("div");el.className="planet";place(el,45,-90+i*360/OUTER.length);
+  el.innerHTML=`<div class="pbody"><div class="pdot">${logo(byName(nm))}</div><div class="plabel">${esc(label)}</div></div>`;
+  rotOut.appendChild(el);
+});
+
+/* ---------- Cursor glow + orbit lean ---------- */
+const heroEl=document.getElementById("top"), orbit=document.getElementById("orbit");
+function trackGlow(section){
+  const g=section.querySelector(".glow"); if(!g) return;
+  section.addEventListener("pointermove",e=>{const r=section.getBoundingClientRect();
+    g.style.setProperty("--gx",(e.clientX-r.left)+"px");g.style.setProperty("--gy",(e.clientY-r.top)+"px");section.classList.add("glow-on")});
+  section.addEventListener("pointerleave",()=>section.classList.remove("glow-on"));
+}
+if(!reduce && finePointer){
+  trackGlow(heroEl); trackGlow(document.querySelector(".apply"));
+  let raf;
+  heroEl.addEventListener("pointermove",e=>{
+    cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(()=>{
+      const r=orbit.getBoundingClientRect();
+      const clamp=v=>Math.max(-1,Math.min(1,v));
+      const dx=clamp((e.clientX-(r.left+r.width/2))/r.width), dy=clamp((e.clientY-(r.top+r.height/2))/r.height);
+      orbit.style.transform=`rotateX(${(dy*9).toFixed(2)}deg) rotateY(${(-dx*9).toFixed(2)}deg)`;
+    });
+  });
+  heroEl.addEventListener("pointerleave",()=>{orbit.style.transform=""});
+}
+
+/* ---------- Headline words ---------- */
+const h1=document.querySelector(".hero h1");
+if(!reduce){
+  const lines=h1.innerHTML.split(/<br\s*\/?>/i).map(l=>l.replace(/<span class="sweep">(.*?)<\/span>/g,"§$1").replace(/<[^>]+>/g,"").trim().split(/\s+/));
+  h1.setAttribute("aria-label",lines.map(l=>l.join(" ").replace(/§/g,"")).join(" "));
+  let i=0;
+  h1.innerHTML=lines.map(l=>l.map(w=>{const key=w.startsWith("§");w=w.replace("§","");
+    return `<span class="w${key?" sweep hero-sweep":""}" aria-hidden="true" style="--i:${i++}">${esc(w)}</span>`}).join(" ")).join("<br>");
+}
+
+/* ---------- Tabs ---------- */
+const tabs=[...document.querySelectorAll(".tab")];
+const sticky=document.getElementById("sticky"), sLabel=document.getElementById("sticky-label"), sBtn=document.getElementById("sticky-btn");
+const STICKY={
+  "t-acc":["Bring Metal To Your Founders","Become A Partner","#apply","Partner With Metal"],
+  "t-adv":["Bring Metal To Your Clients","Become A Partner","#apply","Partner With Metal"],
+  "t-fdr":["In A Partner Program?","Find Your Program","#directory","Find Your Program"]
+};
+const miniText=sticky.querySelector(".mini-text");
+function selectTab(t){
+  tabs.forEach(x=>{const on=x===t;x.setAttribute("aria-selected",on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute("aria-controls")).hidden=!on});
+  const [l,b,h,m]=STICKY[t.id]; sLabel.textContent=l; sBtn.textContent=b; sBtn.setAttribute("href",h); miniText.textContent=m;
+  sBtn.toggleAttribute("data-focus-search",h==="#directory");
+}
+tabs.forEach((t,i)=>{
+  t.addEventListener("click",()=>selectTab(t));
+  t.addEventListener("keydown",e=>{if(e.key==="ArrowRight"||e.key==="ArrowLeft"){const n=tabs[(i+(e.key==="ArrowRight"?1:-1)+tabs.length)%tabs.length];n.focus();selectTab(n)}});
+});
+document.querySelectorAll("[data-type]").forEach(a=>a.addEventListener("click",()=>{document.getElementById("f-type").value=a.dataset.type}));
+
+/* ---------- Directory: intro box until a filter is picked or a search is typed ---------- */
+const grid=document.getElementById("dir-grid"), q=document.getElementById("q"), chipsEl=document.getElementById("chips"),
+      countEl=document.getElementById("dir-count"), empty=document.getElementById("empty"), intro=document.getElementById("dir-intro");
+let active=null;
+const present=["All",...TYPES.filter(t=>PARTNERS.some(p=>p.type===t))];
+chipsEl.innerHTML=present.map(t=>`<button class="chip" aria-pressed="false">${t}</button>`).join("");
+chipsEl.addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;
+  active = active===b.textContent ? null : b.textContent;   // click again to clear
+  [...chipsEl.children].forEach(c=>c.setAttribute("aria-pressed",c.textContent===active));render()});
+q.addEventListener("input",render);
+function render(){
+  const term=q.value.trim().toLowerCase(), idle=!active && !term;
+  intro.hidden=!idle; grid.hidden=idle; countEl.hidden=idle;
+  if(idle){empty.style.display="none";return}
+  const list=PARTNERS.filter(p=>(!active||active==="All"||p.type===active)&&(!term||p.name.toLowerCase().includes(term)))
+                     .sort((a,b)=>a.name.localeCompare(b.name));
+  grid.innerHTML=list.map((p,i)=>{
+    const meta=[];
+    if(p.deal) meta.push(p.dealUrl?`<a class="deal" href="${p.dealUrl}">${p.deal}</a>`:`<span class="deal">${p.deal}</span>`);
+    if(p.story) meta.push(`<a class="link" href="${p.story}">Read The Story →</a>`);
+    if(p.site) meta.push(`<a class="link" href="${p.site}" target="_blank" rel="noopener">Visit Site ↗</a>`);
+    return `<div class="pcard lift" style="--i:${Math.min(i,12)}"><div class="mono" aria-hidden="true">${logo(p)}</div>
+      <div class="name">${esc(p.name)}</div><div class="type">${p.type}</div>
+      ${meta.length?`<div class="meta">${meta.join("")}</div>`:""}</div>`;
+  }).join("");
+  countEl.textContent=`Showing ${list.length} partner${list.length===1?"":"s"}`;
+  empty.style.display=list.length?"none":"block";
+  document.getElementById("empty-q").textContent=q.value;
+}
+render();
+
+/* Founder links: jump to directory and focus search */
+document.addEventListener("click",e=>{
+  const a=e.target.closest("[data-focus-search]"); if(!a) return;
+  e.preventDefault();
+  document.getElementById("directory").scrollIntoView({behavior:reduce?"auto":"smooth"});
+  setTimeout(()=>q.focus({preventScroll:true}),reduce?0:500);
+});
+
+/* ---------- Form ---------- */
+document.getElementById("partner-form").addEventListener("submit",e=>{
+  e.preventDefault();
+  const f=e.target; if(!f.checkValidity()){f.reportValidity();return}
+  f.style.display="none"; document.getElementById("thanks").style.display="block";
+});
+
+/* ---------- Count-up: runs every time a number scrolls into view ---------- */
+const fmt=n=>n.toLocaleString("en-US");
+const runs=new WeakMap();
+function finalText(el){return fmt(+el.dataset.to)+(el.dataset.suffix||"")}
+function countUp(el){
+  cancelAnimationFrame(runs.get(el));
+  const to=+el.dataset.to, suf=el.dataset.suffix||"", dur=900, t0=performance.now();
+  const step=t=>{const k=Math.min((t-t0)/dur,1), e=1-Math.pow(1-k,3);
+    el.textContent=fmt(Math.round(to*e))+(k===1?suf:"");
+    if(k<1) runs.set(el,requestAnimationFrame(step));};
+  runs.set(el,requestAnimationFrame(step));
+}
+const counters=[...document.querySelectorAll(".count")].filter(el=>!el.closest(".stat"));
+const statCounters=document.querySelectorAll(".stat .count");
+if(reduce){[...counters,...statCounters].forEach(el=>el.textContent=finalText(el))}
+else{
+  const cio=new IntersectionObserver(es=>es.forEach(en=>{
+    if(en.isIntersecting){countUp(en.target);cio.unobserve(en.target)}
+  }),{threshold:0});
+  counters.forEach(el=>{el.textContent="0";cio.observe(el)});
+  /* Proof-strip numbers rise up as you scroll down, and count once they've risen */
+  const stats=document.querySelectorAll(".stat");
+  stats.forEach((st,i)=>{st.classList.add("rise");st.style.setProperty("--dl",(i*110)+"ms");st.querySelector(".count").textContent="0"});
+  const sio=new IntersectionObserver(es=>es.forEach(en=>{
+    const c=en.target.querySelector(".count");
+    if(en.isIntersecting){en.target.classList.add("up");setTimeout(()=>countUp(c),parseInt(en.target.style.getPropertyValue("--dl"))||0);sio.unobserve(en.target)}
+  }),{rootMargin:"0px 0px -18% 0px"});
+  stats.forEach(st=>sio.observe(st));
+}
+
+/* ---------- Scroll reveals ---------- */
+if(!reduce){
+  document.querySelectorAll(".section-head,.benefit,.panel-foot,.story,.step,.dir-tools,.dir-intro,.apply,.faq details").forEach(el=>el.classList.add("reveal"));
+  const flaws=document.querySelectorAll(".compare .flaw");
+  flaws[0].classList.add("reveal","from-left"); flaws[1].classList.add("reveal","from-right");
+  document.querySelector(".metal-mid").classList.add("reveal","zoom");
+  document.querySelectorAll(".reveal").forEach(el=>{
+    const sibs=[...el.parentElement.children].filter(c=>c.classList.contains("reveal"));
+    el.style.setProperty("--dl",Math.min(sibs.indexOf(el)*80,320)+"ms");
+  });
+  const rio=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add("in");rio.unobserve(en.target)}}),{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".reveal").forEach(el=>rio.observe(el));
+}
+document.querySelectorAll(".benefit,.story,.flaw").forEach(el=>el.classList.add("lift"));
+
+/* ---------- Sticky bar: full bar after proof strip, pill once the form is reached ---------- */
+const proofEl=document.querySelector(".proof"), applyEl=document.getElementById("apply");
+let pastProof=false, atForm=false;
+function upd(){
+  sticky.classList.toggle("show",pastProof);
+  sticky.classList.toggle("mini",pastProof&&atForm);
+  sticky.setAttribute("aria-hidden",!pastProof);
+  sBtn.tabIndex=(pastProof&&!atForm)?0:-1;
+  sticky.setAttribute("role",atForm?"button":"");
+  sticky.tabIndex=(pastProof&&atForm)?0:-1;
+}
+new IntersectionObserver(([e])=>{pastProof=!e.isIntersecting&&e.boundingClientRect.top<0;upd()}).observe(proofEl);
+new IntersectionObserver(([e])=>{atForm=e.isIntersecting||e.boundingClientRect.top<0;upd()},{threshold:0}).observe(applyEl);
+function goSticky(){
+  const href=sBtn.getAttribute("href");
+  if(href==="#directory"){document.getElementById("directory").scrollIntoView({behavior:reduce?"auto":"smooth"});setTimeout(()=>q.focus({preventScroll:true}),reduce?0:500)}
+  else{applyEl.scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"});setTimeout(()=>document.getElementById("f-name").focus({preventScroll:true}),reduce?0:500)}
+}
+sticky.addEventListener("click",e=>{if(sticky.classList.contains("mini")){e.preventDefault();goSticky()}});
+sticky.addEventListener("keydown",e=>{if(sticky.classList.contains("mini")&&(e.key==="Enter"||e.key===" ")){e.preventDefault();goSticky()}});
+</script>
+</body>
+</html>
