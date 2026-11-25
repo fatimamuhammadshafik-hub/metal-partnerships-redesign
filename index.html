@@ -478,12 +478,9 @@ h3{font-size:24px}
 
 .rot-inner{z-index:3}
 
-/* orbit labels: names only, no numbers */
-.big .plabel,.big .plabel{background:none!important;border:0!important;padding:0!important;color:#d6d6d6;font-size:12px;font-weight:500}
-@media (max-width:600px){.big .plabel{font-size:11px}}
+
 
 /* orbit: logos only, a bit bigger */
-.orbit .plabel{display:none!important}
 .pdot{width:56px;height:56px}
 .big .pdot{width:74px;height:74px}
 .pdot .logo-img img{inset:14%!important;width:72%!important;height:72%!important}
@@ -492,6 +489,23 @@ h3{font-size:24px}
 /* YC + Techstars a step smaller than Metal's core (84px desktop, 66px phone) */
 .big .pdot{width:68px!important;height:68px!important}
 @media (max-width:600px){.big .pdot{width:54px!important;height:54px!important}}
+
+/* orbit v3: wider gap between rings, no container rotation, names on hover */
+.orbit .rot,.orbit .pbody{animation:none!important}
+.orbit .r-outer{inset:4%}
+.orbit .r-inner{inset:31%}
+.orbit-stage{max-width:500px}
+.pbody{position:relative}
+.orbit .plabel{display:block!important;position:absolute;left:50%;top:100%;transform:translate(-50%,8px);opacity:0;pointer-events:none;
+  background:#1c1c1c!important;border:1px solid #474747!important;border-radius:4px;padding:4px 9px!important;font:500 12px/1.3 var(--sans)!important;color:#fff!important;white-space:nowrap;transition:opacity .15s ease;z-index:5}
+.planet{z-index:1}
+.planet:hover{z-index:6}
+.planet:hover .plabel{opacity:1}
+@media (max-width:600px){.orbit .r-inner{inset:29%}.orbit-stage{max-width:340px}}
+
+.orbit .r-outer{inset:2%}
+.orbit .r-inner{inset:25%}
+@media (max-width:600px){.orbit .r-inner{inset:25%}}
 </style>
 </head>
 <body>
@@ -887,16 +901,31 @@ const INNER = [
 const OUTER = [["a16z speedrun","speedrun"],["ERA","ERA"],["Alchemist Accelerator","Alchemist"],["Goodwater Capital","Goodwater"],["Alliance","Alliance"],["MIT delta v","MIT delta v"],["Capital Department","Capital Dept."]];
 function place(el, r, deg){const a=deg*Math.PI/180;el.style.left=(50+r*Math.cos(a))+"%";el.style.top=(50+r*Math.sin(a))+"%"}
 const rotIn=document.getElementById("rot-inner"), rotOut=document.getElementById("rot-outer");
+const ORB=[];
 INNER.forEach(p=>{
-  const el=document.createElement("div");el.className="planet big";place(el,23,p.deg);
+  const el=document.createElement("div");el.className="planet big";place(el,19,p.deg); ORB.push({el,inner:true,deg:p.deg,dir:-1,dur:45});
   el.innerHTML=`<div class="pbody"><div class="pdot">${logo(byName(p.name))}</div><div class="plabel">${esc(p.name)}</div></div>`;
   rotIn.appendChild(el);
 });
 OUTER.forEach(([nm,label],i)=>{
-  const el=document.createElement("div");el.className="planet";place(el,45,-90+i*360/OUTER.length);
-  el.innerHTML=`<div class="pbody"><div class="pdot">${logo(byName(nm))}</div><div class="plabel">${esc(label)}</div></div>`;
+  const el=document.createElement("div");el.className="planet";place(el,46,-90+i*360/OUTER.length); ORB.push({el,inner:false,deg:-90+i*360/OUTER.length,dir:1,dur:60});
+  el.innerHTML=`<div class="pbody"><div class="pdot">${logo(byName(nm))}</div><div class="plabel">${esc(nm)}</div></div>`;
   rotOut.appendChild(el);
 });
+
+/* Orbit motion: each logo travels its ring and stays upright; pauses while hovered */
+{
+  const orbitEl=document.getElementById("orbit"); const small=matchMedia("(max-width:600px)");
+  const radii=()=>small.matches?{i:25,o:48}:{i:25,o:48};
+  let acc=0,last=performance.now(),paused=false;
+  orbitEl.addEventListener("pointerenter",()=>paused=true);
+  orbitEl.addEventListener("pointerleave",()=>paused=false);
+  const draw=()=>{const R=radii(); for(const o of ORB){ place(o.el,o.inner?R.i:R.o,o.deg+o.dir*360*(acc/1000)/o.dur); }};
+  const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduceMotion) draw();
+  else { const frame=now=>{ const dt=now-last; last=now; if(!paused) acc+=dt; draw(); requestAnimationFrame(frame); }; requestAnimationFrame(frame); }
+  small.addEventListener("change",draw);
+}
 
 /* ---------- Cursor glow + orbit lean ---------- */
 const heroEl=document.getElementById("top"), orbit=document.getElementById("orbit");
