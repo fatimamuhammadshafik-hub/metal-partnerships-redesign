@@ -945,7 +945,11 @@ OUTER.forEach(([nm,label],i)=>{
     paused=hold; window.__orbitHold=hold;
   },{passive:true});
   document.addEventListener("pointerleave",()=>{paused=false;window.__orbitHold=false});
-  const draw=()=>{const R=radii(); for(const o of ORB){ place(o.el,o.inner?R.i:R.o,o.deg+o.dir*360*(acc/1000)/o.dur); }};
+  /* move with GPU transforms (sub-pixel, no layout) so the motion is perfectly smooth */
+  let W=orbitEl.offsetWidth; new ResizeObserver(()=>{W=orbitEl.offsetWidth;draw()}).observe(orbitEl);
+  for(const o of ORB){ o.el.style.left="0"; o.el.style.top="0"; o.el.style.willChange="transform"; }
+  const draw=()=>{const R=radii(); for(const o of ORB){ const r=(o.inner?R.i:R.o)/100*W, a=(o.deg+o.dir*360*(acc/1000)/o.dur)*Math.PI/180;
+    o.el.style.transform=`translate3d(${(W/2+r*Math.cos(a)).toFixed(2)}px,${(W/2+r*Math.sin(a)).toFixed(2)}px,0) translate(-50%,-50%)`; }};
   const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(reduceMotion) draw();
   else { const frame=now=>{ const dt=now-last; last=now; if(!paused) acc+=dt; draw(); requestAnimationFrame(frame); }; requestAnimationFrame(frame); }
