@@ -315,8 +315,8 @@ footer{padding:56px 0 40px;font-size:13px}
 .orbit .r-outer{inset:5%}
 .orbit .r-inner{inset:27%;border-color:#454545}
 .rot{position:absolute;inset:0;animation:spin var(--d) linear infinite}
-.rot-outer{--d:150s}
-.rot-inner{--d:110s;animation-direction:reverse}
+.rot-outer{--d:60s}
+.rot-inner{--d:45s;animation-direction:reverse}
 .planet{position:absolute;transform:translate(-50%,-50%)}
 .pbody{display:flex;flex-direction:column;align-items:center;gap:6px;animation:spin var(--d) linear infinite reverse}
 .rot-inner .pbody{animation-direction:normal}
@@ -477,6 +477,10 @@ h3{font-size:24px}
 @media (max-width:600px){.planet:not(.big) .plabel{display:none}.orbit .core{width:66px;height:66px;margin:-33px 0 0 -33px;font-size:32px}.big .plabel{padding:2px 6px}}
 
 .rot-inner{z-index:3}
+
+/* orbit labels: names only, no numbers */
+.big .plabel,.big .plabel{background:none!important;border:0!important;padding:0!important;color:#d6d6d6;font-size:12px;font-weight:500}
+@media (max-width:600px){.big .plabel{font-size:11px}}
 </style>
 </head>
 <body>
@@ -874,7 +878,7 @@ function place(el, r, deg){const a=deg*Math.PI/180;el.style.left=(50+r*Math.cos(
 const rotIn=document.getElementById("rot-inner"), rotOut=document.getElementById("rot-outer");
 INNER.forEach(p=>{
   const el=document.createElement("div");el.className="planet big";place(el,23,p.deg);
-  el.innerHTML=`<div class="pbody"><div class="pdot">${logo(byName(p.name))}</div><div class="plabel"><b><span class="count" data-to="${p.to}" data-suffix="+">${p.to.toLocaleString("en-US")}+</span></b>${p.cap}</div></div>`;
+  el.innerHTML=`<div class="pbody"><div class="pdot">${logo(byName(p.name))}</div><div class="plabel">${esc(p.name)}</div></div>`;
   rotIn.appendChild(el);
 });
 OUTER.forEach(([nm,label],i)=>{
