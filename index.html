@@ -506,6 +506,21 @@ h3{font-size:24px}
 .orbit .r-outer{inset:2%}
 .orbit .r-inner{inset:25%}
 @media (max-width:600px){.orbit .r-inner{inset:25%}}
+
+.orbit .plabel{transition:opacity .08s ease!important}
+.planet:hover .pdot{transform:none}
+
+/* ring layers must not block the cursor; only the logos take hover */
+.orbit .rot{pointer-events:none}
+.orbit .planet{pointer-events:auto}
+
+/* hero: more breathing room between copy and orbit */
+@media (min-width:861px){
+  .hero>.wrap{max-width:1240px;gap:96px;grid-template-columns:1fr 480px}
+  .orbit-stage{max-width:480px}
+}
+@media (max-width:860px){.orbit-stage{margin-top:56px}}
+.orbit{transform:none!important}
 </style>
 </head>
 <body>
@@ -918,8 +933,18 @@ OUTER.forEach(([nm,label],i)=>{
   const orbitEl=document.getElementById("orbit"); const small=matchMedia("(max-width:600px)");
   const radii=()=>small.matches?{i:25,o:48}:{i:25,o:48};
   let acc=0,last=performance.now(),paused=false;
-  orbitEl.addEventListener("pointerenter",()=>paused=true);
-  orbitEl.addEventListener("pointerleave",()=>paused=false);
+  /* pause whenever the cursor is anywhere over the orbit, outer logos included (they sit past the frame's edge) */
+  const stageEl=document.querySelector(".orbit-stage");
+  document.addEventListener("pointermove",e=>{
+    if(e.pointerType!=="mouse"){return}
+    const r=stageEl.getBoundingClientRect(); const cx=r.left+r.width/2, cy=r.top+r.height/2;
+    const hold=Math.hypot(e.clientX-cx,e.clientY-cy) < r.width/2+44;
+    if(hold && !window.__orbitHold){ /* freeze the tilt exactly where it is, so nothing slides under the cursor */
+      const cur=getComputedStyle(orbitEl).transform; orbitEl.style.transition="none"; orbitEl.style.transform=(cur==="none"?"":cur); }
+    if(!hold && window.__orbitHold){ orbitEl.style.transition=""; }
+    paused=hold; window.__orbitHold=hold;
+  },{passive:true});
+  document.addEventListener("pointerleave",()=>{paused=false;window.__orbitHold=false});
   const draw=()=>{const R=radii(); for(const o of ORB){ place(o.el,o.inner?R.i:R.o,o.deg+o.dir*360*(acc/1000)/o.dur); }};
   const reduceMotion=matchMedia("(prefers-reduced-motion: reduce)").matches;
   if(reduceMotion) draw();
@@ -941,6 +966,7 @@ if(!reduce && finePointer){
   heroEl.addEventListener("pointermove",e=>{
     cancelAnimationFrame(raf);
     raf=requestAnimationFrame(()=>{
+      return;
       const r=orbit.getBoundingClientRect();
       const clamp=v=>Math.max(-1,Math.min(1,v));
       const dx=clamp((e.clientX-(r.left+r.width/2))/r.width), dy=clamp((e.clientY-(r.top+r.height/2))/r.height);
