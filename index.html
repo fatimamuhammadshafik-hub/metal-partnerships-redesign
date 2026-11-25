@@ -918,12 +918,12 @@ function place(el, r, deg){const a=deg*Math.PI/180;el.style.left=(50+r*Math.cos(
 const rotIn=document.getElementById("rot-inner"), rotOut=document.getElementById("rot-outer");
 const ORB=[];
 INNER.forEach(p=>{
-  const el=document.createElement("div");el.className="planet big";place(el,19,p.deg); ORB.push({el,inner:true,deg:p.deg,dir:-1,dur:45});
+  const el=document.createElement("div");el.className="planet big";place(el,19,p.deg); ORB.push({el,inner:true,deg:p.deg,dir:-1,dur:28});
   el.innerHTML=`<div class="pbody"><div class="pdot">${logo(byName(p.name))}</div><div class="plabel">${esc(p.name)}</div></div>`;
   rotIn.appendChild(el);
 });
 OUTER.forEach(([nm,label],i)=>{
-  const el=document.createElement("div");el.className="planet";place(el,46,-90+i*360/OUTER.length); ORB.push({el,inner:false,deg:-90+i*360/OUTER.length,dir:1,dur:60});
+  const el=document.createElement("div");el.className="planet";place(el,46,-90+i*360/OUTER.length); ORB.push({el,inner:false,deg:-90+i*360/OUTER.length,dir:1,dur:36});
   el.innerHTML=`<div class="pbody"><div class="pdot">${logo(byName(nm))}</div><div class="plabel">${esc(nm)}</div></div>`;
   rotOut.appendChild(el);
 });
